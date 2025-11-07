@@ -6,10 +6,11 @@ networks:
 services:
   web:
     image: 'nginx:1.29.3-alpine'
+    volume:
+      - './apps:/var/www/html'
     networks:
       - homelab_network
   php-fpm:
-    image: 'php:8.4-fpm-alpine
-'
+    image: 'php:8.4-fpm-alpine'
     networks:
       - homelab_network
